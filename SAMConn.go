@@ -1,15 +1,15 @@
 package sam3
 
 import (
-	"time"
 	"net"
+	"time"
 )
 
 // Implements net.Conn
 type SAMConn struct {
-	laddr  I2PAddr
-	raddr  I2PAddr
-	conn   net.Conn
+	laddr I2PAddr
+	raddr I2PAddr
+	conn  net.Conn
 }
 
 // Implements net.Conn
@@ -53,5 +53,3 @@ func (sc SAMConn) SetReadDeadline(t time.Time) error {
 func (sc SAMConn) SetWriteDeadline(t time.Time) error {
 	return sc.conn.SetWriteDeadline(t)
 }
-
-
